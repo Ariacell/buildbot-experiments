@@ -1,0 +1,26 @@
+// 1. Define Compiler Path
+Compiler( 'GCC' )
+{
+    .Executable = '/usr/bin/gcc'
+}
+
+// 2. Define Compilation Settings
+ObjectList( 'HelloWorld-Lib' )
+{
+    .Compiler           = 'GCC'
+    .CompilerInputPath  = '../src'
+    .CompilerOutputPath = 'Out/Objects/'
+    .CompilerOptions    = '-o %2 %1 -c -g' // %1: Input, %2: Output
+}
+
+// 3. Define Final Executable Target
+Executable( 'HelloWorld' )
+{
+    .Libraries          = { 'HelloWorld-Lib' }
+    .Linker             = '/usr/bin/g++'
+    .LinkerOutput       = 'Out/HelloWorld'
+    .LinkerOptions      = '-o %2 %1'
+}
+
+// 4. Default Target
+Alias( 'all' ) { .Targets = { 'HelloWorld' } }

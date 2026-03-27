@@ -5,7 +5,9 @@
 
 buildbot/*/venv
 buildbot/**/gitpoller-workdir
-buildbot/worker/my_worker/runtests/build
+buildbot/worker/my_worker/**/build
+
+fastbuild/fbuild.linux.fdb
 
 # User-specific files
 *.rsuser

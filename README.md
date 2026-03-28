@@ -47,3 +47,9 @@ Updating config:
 ```sh
 buildbot reconfig master
 ```
+
+
+## References
+
+Seems like a decent blog on sequencing by OpenVPN guy
+https://www.puppeteers.net/blog/buildbot-build-order-how-to-run-certain-builds-before-others/
